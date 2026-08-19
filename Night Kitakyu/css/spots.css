@@ -1,0 +1,466 @@
+/*===================================================
+  spots.css
+  スポット詳細ページ共通CSS
+  対象：皿倉山 / 高塔山 / 和布刈 / 足立公園
+===================================================*/
+
+/*===================================================
+  PC用：スポット詳細ページ共通
+===================================================*/
+
+/* スポット詳細ページの背景エリア */
+.back-img {
+  min-height: 100vh; /* 最低でも画面1枚分の高さを確保する */
+
+  background-size: cover; /* 背景画像を枠いっぱいに広げる */
+  background-position: center; /* 背景画像の中央を見せる */
+  background-repeat: no-repeat; /* 背景画像を繰り返さない */
+  background-attachment: fixed;/*スクロールしても背景画像をその場に固定する*/
+
+  position: relative; /* 中のタイトルや説明エリアを配置する基準 */
+
+  padding: 100px 20px; /* 上下100px、左右20pxの余白 */
+  box-sizing: border-box; /* padding込みでサイズ計算する */
+}
+
+/*===================================================
+  スポットごとの背景画像
+===================================================*/
+
+/* 皿倉山の背景画像 */
+.sarakura-page .back-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://raw.githubusercontent.com/kikkumikuotoko/images/b1d9814bfd43ee693b9c7cd55e018ce2aa93c5b8/images/Night_Kitakyu/SARAKURA_pc.png');
+}
+
+/* 高塔山の背景画像 */
+.takatou-page .back-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../images/TAKATOU_pc.png');
+}
+
+/* 和布刈の背景画像 */
+.mekari-page .back-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../images/MEKARI_pc.png');
+}
+
+/* 足立公園の背景画像 */
+.adachi-page .back-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../images/ADACHI_pc.png');
+}
+
+/*===================================================
+  タイトル
+===================================================*/
+
+/* スポット名のタイトル */
+.spot-hero-text h2 {
+  position: absolute; /* back-imgを基準に自由配置する */
+  top: 30px; /* 上から30px */
+  left: 50%; /* 左から50% */
+  transform: translateX(-50%); /* 自分の横幅の半分だけ左に戻して中央寄せ */
+
+  font-size: 45px; /* タイトルの文字サイズ */
+  font-family: serif; /* 明朝体 */
+  text-align: center; /* 文字を中央寄せ */
+  margin: 0; /* h2が持つ余白を消す */
+
+  z-index: 1; /* 背景画像より前に表示する */
+}
+
+/*===================================================
+  写真と説明文
+===================================================*/
+
+/* 写真と説明文をまとめる箱 */
+.spot-explanation {
+  position: relative; /* 通常の流れに近い形で配置する */
+  top: 30px; /* 上から少し下げる */
+  left: 45%; /* 少し左寄りに配置する */
+  transform: translateX(-50%); /* 横位置を調整する */
+
+  width: 80%; /* 親要素の80%の横幅 */
+  max-width: 900px; /* ただし最大900pxまで */
+
+  display: flex; /* 写真と説明文を横並びにする */
+  align-items: center; /* 写真と説明文の縦位置をそろえる */
+  gap: 60px; /* 写真と説明文の間隔 */
+
+  margin: 20px; /* 外側余白を消す */
+  z-index: 1; /* 背景画像より前に表示する */
+}
+
+/* スポット写真 */
+.spot-explanation img {
+  width: 100%; /* 親の幅に合わせる */
+  max-width: 350px; /* ただし最大350pxまで */
+  height: 200px; /* 写真の高さ */
+
+  object-fit: cover; /* 比率を崩さず、枠いっぱいに切り抜いて表示 */
+  object-position: center; /* 画像の中央を見せる */
+  display: block; /* 画像下の謎の隙間を消す */
+
+  flex-shrink: 0; /* flexの中で写真が勝手に縮まないようにする */
+}
+
+/* 説明文 */
+.spot-explanation p {
+  width: 420px; /* 説明文の横幅 */
+
+  font-size: 20px; /* 文字サイズ */
+  font-family: serif; /* 明朝体 */
+  line-height: 1.8; /* 行間を広げて読みやすくする */
+
+  margin: 0; /* 外側余白を消す */
+  text-align: center; /* 文章を中央揃え */
+}
+
+/*===================================================
+  写真と説明文2
+===================================================*/
+
+/* 写真と説明文をまとめる箱 */
+.spot-explanation2 {
+  position: relative; /* 通常の流れに近い形で配置する */
+  top: 30px; /* 上から少し下げる */
+  left: 45%; /* 少し左寄りに配置する */
+  transform: translateX(-50%); /* 横位置を調整する */
+
+  width: 80%; /* 親要素の80%の横幅 */
+  max-width: 900px; /* ただし最大900pxまで */
+
+  display: flex; /* 写真と説明文を横並びにする */
+  flex-direction: row-reverse;/*左右を反転させる*/
+  align-items: center; /* 写真と説明文の縦位置をそろえる */
+  gap: 60px; /* 写真と説明文の間隔 */
+
+  margin: 0; /* 外側余白を消す */
+  z-index: 1; /* 背景画像より前に表示する */
+}
+
+/* スポット写真 */
+.spot-explanation2 img {
+  width: 100%; /* 親の幅に合わせる */
+  max-width: 350px; /* ただし最大350pxまで */
+  height: 200px; /* 写真の高さ */
+
+  object-fit: cover; /* 比率を崩さず、枠いっぱいに切り抜いて表示 */
+  object-position: center; /* 画像の中央を見せる */
+  display: block; /* 画像下の謎の隙間を消す */
+
+  flex-shrink: 0; /* flexの中で写真が勝手に縮まないようにする */
+}
+
+/* 説明文 */
+.spot-explanation2 p {
+  width: 420px; /* 説明文の横幅 */
+
+  font-size: 20px; /* 文字サイズ */
+  font-family: serif; /* 明朝体 */
+  line-height: 1.8; /* 行間を広げて読みやすくする */
+
+  margin: 0; /* 外側余白を消す */
+  text-align: center; /* 文章を中央揃え */
+}
+
+/*===================================================
+  PC用：ACCESS / MAP
+===================================================*/
+
+/* ACCESSとMAP全体 */
+.spot-access {
+  width: 90%; /* 親要素の横幅の90%を使う */
+  max-width: 900px; /* 最大横幅を900pxにする */
+
+  margin: 80px auto 0; /* 上に80px空けて、左右中央に配置 */
+
+  display: flex; /* ACCESSとMAPを横並びにする */
+  justify-content: space-between; /* ACCESSとMAPの間にスペースを作る */
+  align-items: flex-start; /* ACCESSとMAPの上端をそろえる */
+  gap: 60px; /* ACCESSとMAPの間を60px空ける */
+
+  font-family: serif; /* 明朝体にする */
+
+  position: relative; /* z-indexを使えるようにする */
+  z-index: 1; /* 背景画像より前に表示する */
+}
+
+
+/*===================================================
+  ACCESS
+===================================================*/
+
+/* ACCESS全体 */
+.access-info {
+  width: 60%; /* 全体の60%をACCESS側に使う */
+}
+
+
+/* 【ACCESS】タイトル */
+.access-info h2 {
+  font-size: 28px; /* タイトルの文字サイズ */
+  font-family: serif; /* 明朝体 */
+  font-weight: normal; /* 太字を解除する */
+
+  margin: 0 0 30px; /* 下に30px余白を作る */
+  text-align: left; /* 左寄せにする */
+}
+
+
+/* 住所・車・公共交通機関をそれぞれまとめる箱 */
+.access-item {
+  margin-bottom: 35px; /* 次の項目との間を35px空ける */
+}
+
+
+/* 「住所」「車でのアクセス」など */
+.access-item h3 {
+  font-size: 26px; /* 項目名の文字サイズ */
+  font-family: serif; /* 明朝体 */
+  font-weight: normal; /* 太字を解除する */
+
+  margin: 0 0 8px; /* 説明文との間を8px空ける */
+}
+
+
+/* 住所やアクセス方法の文章 */
+.access-item p {
+  font-size: 18px; /* 説明文の文字サイズ */
+  font-family: serif; /* 明朝体 */
+  line-height: 1.8; /* 行間を広げる */
+
+  margin: 0; /* pタグの余白を消す */
+}
+
+
+/*===================================================
+  MAP
+===================================================*/
+
+/* MAP全体 */
+.map-info {
+  width: 40%; /* 全体の40%をMAP側に使う */
+}
+
+
+/* 【MAP】タイトル */
+.map-info h2 {
+  font-size: 28px; /* タイトルの文字サイズ */
+  font-family: serif; /* 明朝体 */
+  font-weight: normal; /* 太字を解除する */
+
+  margin: 0 0 30px; /* 地図との間を30px空ける */
+  text-align: center; /* 中央寄せにする */
+}
+
+
+/* Google Map */
+.map-info iframe {
+  width: 150%; /* 地図をMAPの箱より大きく表示する */
+  height: 350px; /* 地図の高さ */
+
+  position: relative; /* 地図の位置を調整できるようにする */
+  left: 50%; /* 地図の左端をMAPエリアの中央まで移動する */
+  transform: translateX(-50%); /* 地図自身の半分だけ左に戻して中央にする */
+
+  border: 0; /* iframeの枠線を消す */
+  display: block; /* iframe下の余計な隙間を消す */
+}
+/*===================================================
+  スマホ用：スポット詳細ページ共通
+===================================================*/
+
+@media screen and (max-width: 600px) {
+  /* スマホ用の背景エリア */
+  .back-img {
+    min-height: 100vh; /* 画面1枚分の高さを確保する */
+
+    background-size: cover; /* 背景画像を画面いっぱいに表示 */
+    background-position: center; /* 背景画像の中央を見せる */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    background-attachment: fixed;/*スクロールしても背景画像をその場に固定する*/
+
+    position: relative; /* タイトルなどを配置する基準 */
+
+    display: flex; /* 中身を配置しやすくする */
+    flex-direction: column; /* spot-explanation と spot-explanation2 を 横並びではなく縦並びにする */
+    justify-content: center; /* 中身を中央寄せ */
+    align-items: center; /* 中身を中央寄せ */
+
+    padding: 100px 20px 0; /* 上下100px、左右20pxの余白 */
+    padding-top: 160px; /* 上余白を160pxにする */
+
+    box-sizing: border-box; /* padding込みでサイズ計算 */
+  }
+
+  /* スマホ用タイトル */
+  .spot-hero-text h2 {
+    position: absolute; /* back-imgを基準に自由配置 */
+    top: 70px; /* 上から70px */
+    left: 50%; /* 左から50% */
+    transform: translateX(-50%); /* 自分の横幅の半分だけ戻して中央寄せ */
+
+    white-space: nowrap; /* タイトルを1行にする */
+
+    font-size: 45px; /* スマホ用のタイトルサイズ */
+    font-family: serif; /* 明朝体 */
+    text-align: center; /* 中央寄せ */
+    margin: 0; /* 余白を消す */
+
+    z-index: 1; /* 背景画像より前に出す */
+  }
+
+  /* スマホでは写真と説明文を縦並びにする */
+  .spot-explanation {
+    position: relative; /* absolute配置ではなく通常配置に近くする */
+    top: auto; /* PC用のtop指定を解除 */
+    left: auto; /* PC用のleft指定を解除 */
+    transform: none; /* PC用のtransformを解除 */
+
+    width: 100%; /* 親の幅いっぱい使う */
+    max-width: 420px; /* ただし最大420pxまで */
+
+    display: flex; /* 中身の並び方を操作する */
+    flex-direction: column; /* 写真と説明文を縦並びにする */
+    align-items: center; /* 横方向の中央にそろえる */
+    gap: 20px; /* 写真と説明文の間隔 */
+
+    margin: 0 auto; /* 箱そのものを中央に置く */
+    z-index: 1; /* 背景画像より前に表示する */
+  }
+
+  /* スマホ用スポット写真 */
+  .spot-explanation img {
+    width: 100%; /* 親の幅に合わせて縮む */
+    max-width: 420px; /* ただし最大420pxまで */
+    height: 200px; /* 写真の高さ */
+
+    object-fit: cover; /* 比率を崩さずに切り抜く */
+    object-position: center; /* 画像の中央を見せる */
+    display: block; /* 画像下の隙間を消す */
+
+    flex-shrink: 0; /* 勝手に縮まないようにする */
+  }
+
+  /* スマホ用説明文 */
+  .spot-explanation p {
+    width: 100%; /* 親の幅いっぱい */
+    max-width: 420px; /* ただし最大420pxまで */
+
+    font-size: 20px; /* 文字サイズ */
+    font-family: serif; /* 明朝体 */
+    line-height: 1.8; /* 行間 */
+
+    margin: 0 auto; /* 左右中央に配置 */
+    text-align: center; /* 文章を中央揃え */
+  }
+   /* スマホでは写真と説明文を縦並びにする */
+  .spot-explanation2 {
+    position: relative; /* absolute配置ではなく通常配置に近くする */
+    top: auto; /* PC用のtop指定を解除 */
+    left: auto; /* PC用のleft指定を解除 */
+    transform: none; /* PC用のtransformを解除 */
+
+    width: 100%; /* 親の幅いっぱい使う */
+    max-width: 420px; /* ただし最大420pxまで */
+
+    display: flex; /* 中身の並び方を操作する */
+    flex-direction: column; /* 写真と説明文を縦並びにする */
+    align-items: center; /* 横方向の中央にそろえる */
+    gap: 20px; /* 写真と説明文の間隔 */
+
+    margin: 0 auto; /* 箱そのものを中央に置く */
+    z-index: 1; /* 背景画像より前に表示する */
+  }
+
+  /* スマホ用スポット写真 */
+  .spot-explanation2 img {
+    width: 100%; /* 親の幅に合わせて縮む */
+    max-width: 420px; /* ただし最大420pxまで */
+    height: 200px; /* 写真の高さ */
+
+    object-fit: cover; /* 比率を崩さずに切り抜く */
+    object-position: center; /* 画像の中央を見せる */
+    display: block; /* 画像下の隙間を消す */
+
+    flex-shrink: 0; /* 勝手に縮まないようにする */
+  }
+
+  /* スマホ用説明文 */
+  .spot-explanation2 p {
+    width: 100%; /* 親の幅いっぱい */
+    max-width: 420px; /* ただし最大420pxまで */
+
+    font-size: 20px; /* 文字サイズ */
+    font-family: serif; /* 明朝体 */
+    line-height: 1.8; /* 行間 */
+
+    margin: 0 auto; /* 左右中央に配置 */
+    text-align: center; /* 文章を中央揃え */
+  }
+
+  /* ACCESSとMAP全体 */
+  .spot-access {
+    width: 100%; /* スマホでは横幅いっぱい使う */
+    max-width: 420px; /* 最大420pxまでにする */
+
+    margin: 60px auto 0; /* 上に60px空けて中央配置 */
+
+    display: flex; /* 並び方をFlexboxで操作する */
+    flex-direction: column; /* ACCESSとMAPを縦並びにする */
+    align-items: center; /* 横方向の中央にそろえる */
+    gap: 50px; /* ACCESSとMAPの間を50px空ける */
+  }
+
+  /* ACCESS側 */
+  .access-info {
+    width: 100%; /* 横幅いっぱい使う */
+  }
+
+  .access-info h2 {
+    font-size: 35px; /* スマホ用タイトルサイズ */
+    text-align: center; /* 中央寄せ */
+    margin: 0 0 30px; /* 下に30px空ける */
+  }
+
+  .access-item {
+    margin-bottom: 35px; /* 各項目の間隔 */
+    text-align: center; /* 内容を中央寄せ */
+  }
+
+  .access-item h3 {
+    font-size: 34px; /* 項目名の文字サイズ */
+    margin: 0 0 8px; /* 内容との間を8px空ける */
+  }
+
+  .access-item p {
+    width: 100%; /* 横幅いっぱい使う */
+    max-width: 420px; /* 最大420pxまで */
+
+    font-size: 24px; /* 説明文サイズ */
+    line-height: 1.8; /* 行間を広げる */
+
+    margin: 0 auto; /* 中央配置 */
+  }
+
+  /* MAP側 */
+  .map-info {
+    width: 100%; /* 横幅いっぱい使う */
+  }
+
+  .map-info h2 {
+    font-size: 26px; /* スマホ用タイトルサイズ */
+    text-align: center; /* 中央寄せ */
+    margin: 0 0 30px; /* 地図との間を30px空ける */
+  }
+
+  .map-info iframe {
+    width: 100%; /* 横幅いっぱい */
+    height: 300px; /* 地図の高さ */
+
+    border: 0; /* 枠線を消す */
+    display: block; /* 余計な隙間を消す */
+  }
+}
