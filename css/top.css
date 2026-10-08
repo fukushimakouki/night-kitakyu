@@ -12,11 +12,11 @@
   height: 100vh; /* 画面1枚分の高さ */
   overflow-y: scroll; /* 縦スクロールできるようにする */
   scroll-snap-type: y mandatory; /* 縦方向にスナップさせる */
-  scrollbar-width: none; /* Firefox用：バーを隠してスクロールは残す */
+  scrollbar-width: none; /* Firefox用：スクロールバーを消す */
   -ms-overflow-style: none; /* 旧Edge / IE用 */
 }
 
-/* Chrome / Edge / Safari用：バーを隠してスクロールは残す */
+/* Chrome / Edge / Safari用：スクロールバーを消す */
 .snap-container::-webkit-scrollbar {
   display: none;
   width: 0;
@@ -111,6 +111,12 @@
     scroll-snap-type: x mandatory; /* 横方向にスナップさせる */
     gap: 0; /* spot同士の隙間をなくす */
 
+    scrollbar-width: none; /* Firefox用：スクロールバーを消す */
+  }
+
+  /* Chrome / Safari用：スクロールバーを消す */
+  .snap-container::-webkit-scrollbar {
+    display: none;
   }
 
   /* スマホ版の各spot */
